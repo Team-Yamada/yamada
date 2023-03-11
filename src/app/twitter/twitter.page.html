@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>twitter</ion-title>
+    <ion-title>
+      yamada-twitter.ver
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div id="container">
+    <strong>Instagramから文章を生成しました!!</strong>
+    <form>
+      <ion-item counter="true" class="sample" [counterFormatter]="customCounterFormatter">
+        <ion-label position="stacked">ツイート内容</ion-label>
+        <ion-input maxlength="140" [(ngModel)]="SampleTweet" name="SampleTweet"></ion-input>
+      </ion-item>
+      <ion-button shape="round" href="https://twitter.com/intent/tweet?text={{SampleTweet}}" class="twitter-share-button" data-show-count="false" data-size="large">ツイートする</ion-button>
+      <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+    </form>
+  </div>
 </ion-content>

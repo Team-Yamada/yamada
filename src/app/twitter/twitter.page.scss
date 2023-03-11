@@ -1,0 +1,29 @@
+#container {
+    text-align: center;
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .sample {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form {
+    color: aqua;
+  }
+
+  ion-item {
+    --highlight-color-focused: #2c6ee9;
+    --highlight-color-valid: #2c6ee9;
+  }
