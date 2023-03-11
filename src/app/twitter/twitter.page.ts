@@ -12,7 +12,10 @@ export class TwitterPage implements OnInit {
     public gs: GlobalService
   ) {}
 
-  SampleTweet: string = 'ここにツイート内容が表示されます';
+  SampleTweet1: string = 'ここにツイート内容が表示されます1';
+  SampleTweet2: string = 'ここにツイート内容が表示されます2';
+  SampleTweet3: string = 'ここにツイート内容が表示されます3';
+  SampleTweet4: string = 'ここにツイート内容が表示されます4';
   send: any ={};
   botten = true;
   
