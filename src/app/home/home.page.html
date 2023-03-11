@@ -1,38 +1,28 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      yamada
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            yamada
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">nanikore</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">nanikore</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <div id="container">
-    <strong>ツイートしたい画像があるinstagramのURLを入力してください</strong>
-    <form (submit)="conversion()">
-      <ion-item fill="outline" class="input">
-        <ion-label color="medium" position="floating">instagramのURL</ion-label>
-        <ion-input (ionChange)="urlCheck()" class="ininput" [(ngModel)]="instagram_url" name="instagram_url"></ion-input>
-        <ion-note *ngIf="errorStatus==0" slot="helper">instagramのURLを入力してください</ion-note>
-        <ion-note *ngIf="errorStatus==-1" slot="helper" class="errorStatus">instagramのURLではないです!!</ion-note>
-      </ion-item>
-      <ion-button type="submit" [disabled]="botten">ツイート内容を確認</ion-button>
-      <ion-item class="sample">
-        <ion-label position="stacked">ツイート内容</ion-label>
-        <ion-input id="sample" [value]="SampleTweet">
-          <!-- <script>
-          i = "SampleTweet";
-          document.getElementById("sample").value = i ;
-          </script> -->
-          </ion-input>
-      </ion-item>
-      <ion-button [disabled]="botten">ツイートする</ion-button>
-    </form>
-  </div>
+    <div id="container">
+        <strong>ツイートしたい画像があるInstagramのURLを入力してください</strong>
+        <form (submit)="conversion()">
+            <ion-item fill="outline" class="input">
+                <ion-label color="medium" position="floating">InstagramのURL</ion-label>
+                <ion-input (ionChange)="urlCheck()" class="ininput" [(ngModel)]="instagram_url" name="instagram_url"></ion-input>
+                <ion-note *ngIf="errorStatus==0" slot="helper">InstagramのURLを入力してください</ion-note>
+                <ion-note *ngIf="errorStatus==-1" slot="helper" class="errorStatus">InstagramのURLではないです!!</ion-note>
+            </ion-item>
+            <ion-button type="submit" [disabled]="button">ツイート内容を確認</ion-button>
+        </form>
+    </div>
 </ion-content>
