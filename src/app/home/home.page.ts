@@ -23,8 +23,10 @@ export class HomePage {
     console.log(this.instagram_url);
     // this.SampleTweet = "power is power"
 
+    this.router.navigate([`/${this.instagram_url}`])
+    // jsonを取得
 
-    this.router.navigate(['/twitter'])
+    this.router.navigate([`/twitter`])
   }
 
   urlCheck() {
