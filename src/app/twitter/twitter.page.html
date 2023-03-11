@@ -5,19 +5,23 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content color="dark">
+<div class="tab-wrap">
+    <input (click)="tweet1()" id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB02-01">ツイート1</label>
+    <input (click)="tweet2()" id="TAB02-02" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-02">ツイート2</label>
+    <input (click)="tweet3()" id="TAB02-03" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-03">ツイート3</label>
+    <input (click)="tweet4()" id="TAB02-04" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-04">ツイート4</label>
+</div>
   <div id="container">
     <strong>Instagramから文章を生成しました!!</strong>
       <!-- <ion-item color="secondary" counter="true" class="sample" [counterFormatter]="customCounterFormatter">
         <ion-label position="stacked">ツイート内容</ion-label>
         <ion-input maxlength="140" [(ngModel)]="SampleTweet" name="SampleTweet"></ion-input>
       </ion-item> -->
-      <ion-item color="dark" counter="true" class="sample" [counterFormatter]="customCounterFormatter">
-        <ion-label position="stacked">ツイート内容</ion-label>
-        <ion-textarea maxlength="140" [(ngModel)]="SampleTweet" name="SampleTweet"></ion-textarea>
+      <ion-item counter="true" class="sample" [counterFormatter]="customCounterFormatter">
+        <ion-label color="light" position="stacked">ツイート内容</ion-label>
+        <ion-textarea color="light" maxlength="140" [(ngModel)]="SampleTweet" name="SampleTweet"></ion-textarea>
       </ion-item>
-      <ion-button shape="round" href="https://twitter.com/intent/tweet?text={{SampleTweet}}" class="twitter-share-button" data-show-count="false" data-size="large">ツイートする</ion-button>
+      <ion-button color="twitter" [disabled]="nottweet" shape="round" href="https://twitter.com/intent/tweet?text={{SampleTweet}}" class="twitter-share-button" data-show-count="false" data-size="large">ツイートする</ion-button>
       <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
   </div>
 </ion-content>

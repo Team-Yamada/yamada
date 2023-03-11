@@ -2,8 +2,8 @@
     text-align: center;
     
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 2em;
+    right: 2em;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -11,22 +11,83 @@
   #container strong {
     font-size: 20px;
     line-height: 26px;
+    
   }
   
   .sample {
-    width: 650px;
+    width: auto;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .form {
-    color: aqua;
+  ion-item {
+    --highlight-color-focused: #1DA1F2;
+    --highlight-color-valid: #1DA1F2;
+    --border-width: 2px;
+    --background: #222428;
+    --border-color: #1DA1F2;
+  }
+  
+  .ion-color-twitter {
+    --ion-color-base: var(--ion-color-twitter);
+    --ion-color-base-rgb: var(--ion-color-twitter-rgb);
+    --ion-color-contrast: var(--ion-color-twitter-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-twitter-contrast-rgb);
+    --ion-color-shade: var(--ion-color-twitter-shade);
+    --ion-color-tint: var(--ion-color-twitter-tint);
   }
 
-  ion-item {
-    --highlight-color-focused: #2c6ee9;
-    --highlight-color-valid: #2c6ee9;
-    --border-width: 2px;
-    --border-color: #ffffff;
-    --color: #2c6ee9;
+  .tab-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin:20px;
+  }
+  .tab-wrap:after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #1DA1F2;
+    display: block;
+    order: -1;
+  }
+  .tab-label {
+    color: White;
+    background: #222428;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    white-space: nowrap;
+    text-align: center;
+    padding: 10px .5em;
+    order: -1;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    flex: 1;
+  }
+  .tab-label:not(:last-of-type) {
+    margin-right: 5px;
+  }
+  .tab-content {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  /* アクティブなタブ */
+  .tab-switch:checked+.tab-label {
+    background: #1DA1F2;
+  }
+  .tab-switch:checked+.tab-label+.tab-content {
+    height: auto;
+    overflow: auto;
+    padding: 15px;
+    opacity: 1;
+    transition: .5s opacity;
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+  }
+  /* ラジオボタン非表示 */
+  .tab-switch {
+    display: none;
   }
