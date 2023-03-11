@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'twitter',
+    loadChildren: () => import('./twitter/twitter.module').then( m => m.TwitterPageModule)
+  },
 ];
 
 @NgModule({
