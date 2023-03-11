@@ -1,38 +1,120 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      yamada
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            yamada
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">nanikore</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+    <div id="container">
+        <strong>ツイートしたい画像があるInstagramの投稿URLを入力してください</strong>
+        <form (submit)="conversion()">
+            <ion-item fill="outline" class="input">
+                <ion-label color="medium" position="floating">InstagramのURL(例:https://instagram.com/xxx)</ion-label>
+                <ion-input (ionChange)="urlCheck()" class="ininput" [(ngModel)]="instagram_url" name="instagram_url"></ion-input>
+                <ion-note *ngIf="errorStatus==0" slot="helper">Instagramの投稿URLを入力してください</ion-note>
+                <ion-note *ngIf="errorStatus==-1" slot="helper" class="errorStatus">InstagramのURLではないです!!</ion-note>
+            </ion-item>
+            <ion-button type="submit" [disabled]="button">投稿の内容を確認</ion-button>
+        </form>
 
-  <div id="container">
-    <strong>ツイートしたい画像があるinstagramのURLを入力してください</strong>
-    <form (submit)="conversion()">
-      <ion-item fill="outline" class="input">
-        <ion-label color="medium" position="floating">instagramのURL</ion-label>
-        <ion-input (ionChange)="urlCheck()" class="ininput" [(ngModel)]="instagram_url" name="instagram_url"></ion-input>
-        <ion-note *ngIf="errorStatus==0" slot="helper">instagramのURLを入力してください</ion-note>
-        <ion-note *ngIf="errorStatus==-1" slot="helper" class="errorStatus">instagramのURLではないです!!</ion-note>
-      </ion-item>
-      <ion-button type="submit" [disabled]="botten">ツイート内容を確認</ion-button>
-      <ion-item class="sample">
-        <ion-label position="stacked">ツイート内容</ion-label>
-        <ion-input id="sample" [value]="SampleTweet">
-          <!-- <script>
-          i = "SampleTweet";
-          document.getElementById("sample").value = i ;
-          </script> -->
-          </ion-input>
-      </ion-item>
-      <ion-button [disabled]="botten">ツイートする</ion-button>
-    </form>
-  </div>
+        <details>
+            <summary>投稿URLの取得方法(アプリ版)</summary>
+            <ol>
+                <li>右上の「•••」をクリックする
+                    <figure>
+                        <img src="../../assets/howto/mobile_1.png" alt="" width="200">
+                    </figure>
+                </li>
+                <li>「リンクをコピー」をクリックする
+                    <figure>
+                        <img src="../../assets/howto/mobile_2.png" alt="" width="200">
+                    </figure>
+                </li>
+            </ol>
+        </details>
+
+        <details>
+            <summary>投稿URLの取得方法(Web版)</summary>
+            <ol>
+                <li>取得したい投稿のURLを直接コピー&ペーストする
+                    <figure>
+                        <img src="../../assets/howto/web_1.png" alt="" width="200">
+                    </figure>
+                </li>
+                <li>右上の「•••」をクリックする
+                    <figure>
+                        <img src="../../assets/howto/web_2.png" alt="" width="200">
+                    </figure>
+                </li>
+                <li>「リンクをコピー」をクリックする
+                    <figure>
+                        <img src="../../assets/howto/web_3.png" alt="" width="200">
+                    </figure>
+                </li>
+            </ol>
+        </details>
+
+        <div class="wrapper">
+            <details class="js-details">
+                <summary class="js-summary">
+                    <span class="summary_inner">
+                        投稿URLの取得方法(アプリ版)<span class="icon"></span>
+                    </span>
+                </summary>
+                <div class="content js-content">
+                    <div class="content_inner">
+                        <ol>
+                            <li>右上の「•••」をクリックする
+                                <figure>
+                                    <img src="../../assets/howto/mobile_1.png" alt="" width="200">
+                                </figure>
+                            </li>
+                            <li>「リンクをコピー」をクリックする
+                                <figure>
+                                    <img src="../../assets/howto/mobile_2.png" alt="" width="200">
+                                </figure>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="wrapper">
+            <details class="js-details">
+                <summary class="js-summary">
+                    <span class="summary_inner">
+                        投稿URLの取得方法(Web版)<span class="icon"></span>
+                    </span>
+                </summary>
+                <div class="content js-content">
+                    <div class="content_inner">
+                        <ol>
+                            <li>取得したい投稿のURLを直接コピー&ペーストする
+                                <figure>
+                                    <img src="../../assets/howto/web_1.png" alt="" width="200">
+                                </figure>
+                            </li>
+                            <li>右上の「•••」をクリックする
+                                <figure>
+                                    <img src="../../assets/howto/web_2.png" alt="" width="200">
+                                </figure>
+                            </li>
+                            <li>「リンクをコピー」をクリックする
+                                <figure>
+                                    <img src="../../assets/howto/web_3.png" alt="" width="200">
+                                </figure>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+    </div>
 </ion-content>
+
+
+<script src="webAnimationsApiAccordion.js"></script>
