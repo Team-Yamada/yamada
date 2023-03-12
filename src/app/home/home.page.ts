@@ -46,7 +46,7 @@ export class HomePage {
 
     this.loading.present();
   }
-  
+
 
   conversion = () => {
     this.showLoading();
@@ -54,17 +54,16 @@ export class HomePage {
     this.post['instagram_url'] = this.instagram_url;
     const body = this.post;
 
-    this.gs.http('http://localhost:8000/get_url' , body).subscribe(
+    // 起動時毎回変わる
+    this.gs.http('http://localhost:8100/get_url()', body).subscribe(
       res => {
-        console.log("c");
         this.return = res;
-        console.log("d");
         this.SampleTweet1 = this.return['tweet_text_0']
         this.SampleTweet2 = this.return['tweet_text_1']
         this.SampleTweet3 = this.return['tweet_text_2']
         this.SampleTweet4 = this.return['tweet_text_3']
 
-        
+
         this.textlist[0] = this.SampleTweet1;
         this.textlist[1] = this.SampleTweet2;
         this.textlist[2] = this.SampleTweet3;
@@ -91,7 +90,7 @@ export class HomePage {
       this.errorStatus = -1;
     }
   }
-  
+
 
 
 }

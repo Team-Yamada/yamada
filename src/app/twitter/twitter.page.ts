@@ -12,7 +12,7 @@ export class TwitterPage implements OnInit {
 
   constructor(
     public gs: GlobalService
-  ) {}
+  ) { }
 
   json: any = localStorage.getItem("item");
   textlist: any = JSON.parse(this.json);
@@ -22,38 +22,45 @@ export class TwitterPage implements OnInit {
   SampleTweet4: string = this.textlist[3];
   SampleTweet: string = this.SampleTweet1;
   nottweet = false;
-  
 
 
 
-  tweet1(){
+
+  tweet1() {
     this.SampleTweet = this.SampleTweet1;
+    this.nottweet = false;
   }
 
-  tweet2(){
-    if(this.SampleTweet2!=""){
+  tweet2() {
+    if (this.SampleTweet2 != "") {
       this.SampleTweet = this.SampleTweet2;
-    }else{
+      this.nottweet = false;
+    } else {
+      this.SampleTweet = "";
       this.nottweet = true;
     }
   }
 
-  tweet3(){
-    if(this.SampleTweet3!=""){
+  tweet3() {
+    if (this.SampleTweet3 != "") {
       this.SampleTweet = this.SampleTweet3;
-    }else{
+      this.nottweet = false;
+    } else {
+      this.SampleTweet = "";
       this.nottweet = true;
     }
   }
 
-  tweet4(){
-    if(this.SampleTweet4!=""){
+  tweet4() {
+    if (this.SampleTweet4 != "") {
       this.SampleTweet = this.SampleTweet4;
-    }else{
+      this.nottweet = false;
+    } else {
+      this.SampleTweet = "";
       this.nottweet = true;
     }
   }
-  
+
   customCounterFormatter(inputLength: number, maxLength: number) {
     return `残り${maxLength - inputLength}文字です。 `;
   }
