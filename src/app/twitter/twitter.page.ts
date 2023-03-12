@@ -12,13 +12,16 @@ export class TwitterPage implements OnInit {
     public gs: GlobalService
   ) {}
 
-  SampleTweet1: string = 'ここにツイート内容が表示されます1';
-  SampleTweet2: string = 'ここにツイート内容が表示されます2';
-  SampleTweet3: string = 'ここにツイート内容が表示されます3';
-  SampleTweet4: string = 'ここにツイート内容が表示されます4';
+  json: any = localStorage.getItem("item");
+  textlist: any = JSON.parse(this.json);
+  SampleTweet1: string = this.textlist['1'];
+  SampleTweet2: string = this.textlist['2'];
+  SampleTweet3: string = this.textlist['3'];
+  SampleTweet4: string = this.textlist['4'];
   SampleTweet: string = this.SampleTweet1;
-  send: any ={};
   nottweet = false;
+
+
 
   tweet1(){
     this.SampleTweet = this.SampleTweet1;
@@ -53,6 +56,7 @@ export class TwitterPage implements OnInit {
   }
 
   ngOnInit() {
+    console.log("aaaa")
   }
 
 }
