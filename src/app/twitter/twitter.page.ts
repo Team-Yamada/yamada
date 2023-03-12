@@ -16,10 +16,10 @@ export class TwitterPage implements OnInit {
 
   json: any = localStorage.getItem("item");
   textlist: any = JSON.parse(this.json);
-  SampleTweet1: string = this.textlist['1'];
-  SampleTweet2: string = this.textlist['2'];
-  SampleTweet3: string = this.textlist['3'];
-  SampleTweet4: string = this.textlist['4'];
+  SampleTweet1: string = this.textlist[0];
+  SampleTweet2: string = this.textlist[1];
+  SampleTweet3: string = this.textlist[2];
+  SampleTweet4: string = this.textlist[3];
   SampleTweet: string = this.SampleTweet1;
   nottweet = false;
   
