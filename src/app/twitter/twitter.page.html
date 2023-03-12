@@ -21,7 +21,7 @@
       </ion-item> -->
         <ion-item counter="true" class="sample" [counterFormatter]="customCounterFormatter">
             <ion-label color="light" position="stacked">ツイート内容</ion-label>
-            <ion-textarea color="light" maxlength="140" [(ngModel)]="SampleTweet" name="SampleTweet"></ion-textarea>
+            <ion-textarea color="light" maxlength="140" [autoGrow]="true" [(ngModel)]="SampleTweet" name="SampleTweet"></ion-textarea>
         </ion-item>
         <ion-button class="button" color="twitter" [disabled]="nottweet" shape="round" href="https://twitter.com/intent/tweet?text={{SampleTweet}}" class="twitter-share-button" data-show-count="false" data-size="large">ツイートする</ion-button>
         <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->

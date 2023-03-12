@@ -34,7 +34,7 @@ export class HomePage {
   errorStatus = 0;
   post: any = {};
   return: any = {};
-  textlist: any = {};
+  textlist: any = [];
   loading: any;
 
   async showLoading() {
@@ -54,7 +54,7 @@ export class HomePage {
     this.post['instagram_url'] = this.instagram_url;
     const body = this.post;
 
-    this.gs.http('https://937e-220-98-199-219.ngrok.io/get_url' , body).subscribe(
+    this.gs.http('http://localhost:8000/get_url' , body).subscribe(
       res => {
         console.log("c");
         this.return = res;
@@ -63,21 +63,22 @@ export class HomePage {
         this.SampleTweet2 = this.return['tweet_text_1']
         this.SampleTweet3 = this.return['tweet_text_2']
         this.SampleTweet4 = this.return['tweet_text_3']
-        console.log(res);
+
+        
+        this.textlist[0] = this.SampleTweet1;
+        this.textlist[1] = this.SampleTweet2;
+        this.textlist[2] = this.SampleTweet3;
+        this.textlist[3] = this.SampleTweet4;
+        console.log(this.textlist);
+        localStorage.setItem("item", JSON.stringify(this.textlist));
+        this.loading.dismiss();
+        this.router.navigate([`/twitter`])
       }
     )
     // this.SampleTweet = "power is power"
 
     //this.router.navigate([`/${this.instagram_url}`])
     // jsonを取得
-
-    this.textlist['1'] = this.SampleTweet1;
-    this.textlist['2'] = this.SampleTweet2;
-    this.textlist['3'] = this.SampleTweet3;
-    this.textlist['4'] = this.SampleTweet4;
-    localStorage.setItem("item", JSON.stringify(this.textlist));
-    this.loading.dismiss();
-    this.router.navigate([`/twitter`])
   }
 
   urlCheck() {

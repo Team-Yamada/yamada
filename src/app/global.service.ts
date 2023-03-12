@@ -39,7 +39,7 @@ export class GlobalService {
     postUrl = _postUrl;
     ret = this._http.post(postUrl, _trans_data, HTTP_OPTIONS)
     .pipe(
-      timeout(50000),
+      timeout(500000),
       catchError(this.handleError())
     );
     return ret;
