@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  //cv_key: "aaaaaaa"
+  //cv_key: false
 };
 
 /*

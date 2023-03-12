@@ -15,6 +15,10 @@ const HTTP_OPTIONS_OCTET = {
     //'Prediction-key': environment.cv_key
   })
 };
+const HTTP_OPTIONS_GET = {
+  headers: new HttpHeaders({
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -35,11 +39,24 @@ export class GlobalService {
     postUrl = _postUrl;
     ret = this._http.post(postUrl, _trans_data, HTTP_OPTIONS)
     .pipe(
-      timeout(5000),
+      timeout(50000),
       catchError(this.handleError())
     );
     return ret;
   }
+
+  public httpGet(_getUrl: string): Observable<any> {
+    let ret: Observable<any>;
+    let getUrl: string;
+    getUrl = _getUrl;
+    ret = this._http.get(getUrl, HTTP_OPTIONS_GET)
+    .pipe(
+      timeout(10000),
+      catchError(this.handleError())
+    );
+    return ret;
+  }
+
   public httpPostOctet(_postUrl: string, _trans_data: any = ''): Observable<any> {
     let ret: Observable<any>;
     let postUrl: string;
