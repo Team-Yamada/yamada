@@ -95,3 +95,10 @@ ion-title {
     font-size: 2em;
     text-align: center;
 }
+
+ion-loading.custom-loading {
+    --background: #e3edff;
+    --spinner-color: #1c6dff;
+  
+    color: #1c6dff;
+  }

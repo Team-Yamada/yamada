@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { timeout, catchError } from 'rxjs/operators';
+import { LoadingController } from '@ionic/angular';
 
 const HTTP_OPTIONS_GET = {
   headers: new HttpHeaders({
@@ -20,7 +21,8 @@ export class HomePage {
   constructor(
     public gs: GlobalService,
     private router: Router,
-    private _http: HttpClient
+    private _http: HttpClient,
+    private loadingCtrl: LoadingController
   ) { }
   instagram_url: string = '';
   SampleTweet1: string = 'ここにツイート内容が表示されます1';
@@ -33,9 +35,21 @@ export class HomePage {
   post: any = {};
   return: any = {};
   textlist: any = {};
+  loading: any;
+
+  async showLoading() {
+    this.loading = await this.loadingCtrl.create({
+      message: 'Loading...',
+      duration: 300000000,
+      cssClass: 'custom-loading',
+    });
+
+    this.loading.present();
+  }
   
 
   conversion = () => {
+    this.showLoading();
     console.log(this.instagram_url);
     this.post['instagram_url'] = this.instagram_url;
     const body = this.post;
@@ -62,6 +76,7 @@ export class HomePage {
     this.textlist['3'] = this.SampleTweet3;
     this.textlist['4'] = this.SampleTweet4;
     localStorage.setItem("item", JSON.stringify(this.textlist));
+    this.loading.dismiss();
     this.router.navigate([`/twitter`])
   }
 

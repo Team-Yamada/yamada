@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../global.service';
 
+
+
 @Component({
   selector: 'app-twitter',
   templateUrl: './twitter.page.html',
@@ -20,6 +22,7 @@ export class TwitterPage implements OnInit {
   SampleTweet4: string = this.textlist['4'];
   SampleTweet: string = this.SampleTweet1;
   nottweet = false;
+  
 
 
 
@@ -56,7 +59,7 @@ export class TwitterPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log("aaaa")
+    console.log("aaaa");
   }
 
 }
