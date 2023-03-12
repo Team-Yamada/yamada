@@ -1,35 +1,97 @@
+body,
+button,
+input,
+label,
+select,
+td,
+textarea {
+    font-family: Helvetica, Arial, "hiragino kaku gothic pro", meiryo, "ms pgothic", sans-serif;
+}
+
+.ion-color-instagram {
+    --ion-color-base: var(--ion-color-instagram);
+    --ion-color-base-rgb: var(--ion-color-instagram-rgb);
+    --ion-color-contrast: var(--ion-color-instagram-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-instagram-contrast-rgb);
+    --ion-color-shade: var(--ion-color-instagram-shade);
+    --ion-color-tint: var(--ion-color-instagram-tint);
+}
+
 #container {
-  text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+    text-align: center;
+    position: absolute;
+    left: 2em;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #container strong {
-  font-size: 20px;
-  line-height: 26px;
+    font-size: 20px;
+    line-height: 26px;
 }
 
 .input {
-  width: 650px;
-  font-size: 15px;
-  margin-left: auto;
-  margin-right: auto;
+    width: auto;
+    max-width: 700px;
+    font-size: 30px;
+    margin: auto;
+    background-color: rgb(239, 239, 239);
+    border-style: none;
 }
 
 .ininput {
-  font-size: 17px;
+    font-size: 1.3em;
+    border-radius: 8px;
+    padding: 1em;
 }
 
-.sample {
-  width: 650px;
-  margin-left: auto;
-  margin-right: auto;
+ion-item {
+    --border-style: 0px;
+}
+
+.item-inner {
+    border-style: none;
+}
+
+.item-native {
+    background-color: rgb(239, 239, 239);
+    border-radius: 8px;
+    padding: 1em;
+    border-style: none;
+}
+
+.button {
+    margin: 2em;
+}
+
+.button:hover {
+    opacity: .8;
 }
 
 .errorStatus {
-  color: crimson;
+    color: crimson;
+}
+
+ion-textarea.textarea {
+    --background: rgb(239, 239, 239);
+    --placeholder-opacity: 0.4;
+    font-size: .8em;
+    padding: 0 0 -1em 0;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    border-radius: 8px;
+}
+
+.textarea:focus {
+    color: black;
+}
+
+ion-toolbar {
+    font-family: 'Damion', cursive;
+}
+
+ion-title {
+    font-size: 2em;
+    text-align: center;
 }
