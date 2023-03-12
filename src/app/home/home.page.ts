@@ -38,7 +38,6 @@ export class HomePage {
       this.button = true;
       this.errorStatus = -1;
     }
-
   }
 
 }
