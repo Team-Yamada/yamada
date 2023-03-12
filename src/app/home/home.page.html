@@ -11,7 +11,7 @@
 
 <ion-content>
     <div id="container">
-        <strong>ツイートしたい画像があるInstagramの投稿URLを入力</strong>
+        <strong>ツイートしたい画像がある<a href="https://www.instagram.com/">Instagram</a>の投稿URLを入力</strong>
         <form (submit)="conversion()">
             <ion-item counter="true" class="input">
                 <ion-textarea placeholder="https://www.instagram.com/p/xxx..." class="textarea" (ionChange)="urlCheck()" [(ngModel)]="instagram_url" name="instagram_url"></ion-textarea>
