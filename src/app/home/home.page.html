@@ -1,5 +1,8 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+</style>
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="light">
         <ion-title>
             yamada
         </ion-title>
@@ -8,113 +11,14 @@
 
 <ion-content>
     <div id="container">
-        <strong>ツイートしたい画像があるInstagramの投稿URLを入力してください</strong>
+        <strong>ツイートしたい画像があるInstagramの投稿URLを入力</strong>
         <form (submit)="conversion()">
-            <ion-item fill="outline" class="input">
-                <ion-label color="medium" position="floating">InstagramのURL(例:https://instagram.com/xxx)</ion-label>
-                <ion-input (ionChange)="urlCheck()" class="ininput" [(ngModel)]="instagram_url" name="instagram_url"></ion-input>
-                <ion-note *ngIf="errorStatus==0" slot="helper">Instagramの投稿URLを入力してください</ion-note>
-                <ion-note *ngIf="errorStatus==-1" slot="helper" class="errorStatus">InstagramのURLではないです!!</ion-note>
+            <ion-item counter="true" class="input">
+                <ion-textarea placeholder="https://www.instagram.com/p/xxx..." class="textarea" (ionChange)="urlCheck()" [(ngModel)]="instagram_url" name="instagram_url"></ion-textarea>
             </ion-item>
-            <ion-button type="submit" [disabled]="button">投稿の内容を確認</ion-button>
+            <ion-button type="submit" [disabled]="button" color="instagram" class="button">
+                投稿の内容を確認
+            </ion-button>
         </form>
-
-        <details>
-            <summary>投稿URLの取得方法(アプリ版)</summary>
-            <ol>
-                <li>右上の「•••」をクリックする
-                    <figure>
-                        <img src="../../assets/howto/mobile_1.png" alt="" width="200">
-                    </figure>
-                </li>
-                <li>「リンクをコピー」をクリックする
-                    <figure>
-                        <img src="../../assets/howto/mobile_2.png" alt="" width="200">
-                    </figure>
-                </li>
-            </ol>
-        </details>
-
-        <details>
-            <summary>投稿URLの取得方法(Web版)</summary>
-            <ol>
-                <li>取得したい投稿のURLを直接コピー&ペーストする
-                    <figure>
-                        <img src="../../assets/howto/web_1.png" alt="" width="200">
-                    </figure>
-                </li>
-                <li>右上の「•••」をクリックする
-                    <figure>
-                        <img src="../../assets/howto/web_2.png" alt="" width="200">
-                    </figure>
-                </li>
-                <li>「リンクをコピー」をクリックする
-                    <figure>
-                        <img src="../../assets/howto/web_3.png" alt="" width="200">
-                    </figure>
-                </li>
-            </ol>
-        </details>
-
-        <div class="wrapper">
-            <details class="js-details">
-                <summary class="js-summary">
-                    <span class="summary_inner">
-                        投稿URLの取得方法(アプリ版)<span class="icon"></span>
-                    </span>
-                </summary>
-                <div class="content js-content">
-                    <div class="content_inner">
-                        <ol>
-                            <li>右上の「•••」をクリックする
-                                <figure>
-                                    <img src="../../assets/howto/mobile_1.png" alt="" width="200">
-                                </figure>
-                            </li>
-                            <li>「リンクをコピー」をクリックする
-                                <figure>
-                                    <img src="../../assets/howto/mobile_2.png" alt="" width="200">
-                                </figure>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </details>
-        </div>
-
-        <div class="wrapper">
-            <details class="js-details">
-                <summary class="js-summary">
-                    <span class="summary_inner">
-                        投稿URLの取得方法(Web版)<span class="icon"></span>
-                    </span>
-                </summary>
-                <div class="content js-content">
-                    <div class="content_inner">
-                        <ol>
-                            <li>取得したい投稿のURLを直接コピー&ペーストする
-                                <figure>
-                                    <img src="../../assets/howto/web_1.png" alt="" width="200">
-                                </figure>
-                            </li>
-                            <li>右上の「•••」をクリックする
-                                <figure>
-                                    <img src="../../assets/howto/web_2.png" alt="" width="200">
-                                </figure>
-                            </li>
-                            <li>「リンクをコピー」をクリックする
-                                <figure>
-                                    <img src="../../assets/howto/web_3.png" alt="" width="200">
-                                </figure>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </details>
-        </div>
-
     </div>
 </ion-content>
-
-
-<script src="webAnimationsApiAccordion.js"></script>

@@ -31,14 +31,13 @@ export class HomePage {
 
   urlCheck() {
     //console.log(this.errorStatus);
-    if (this.instagram_url.includes("https://www.instagram.com/p/")) {
+    if (this.instagram_url.includes("https://www.instagram.com/p/") || this.instagram_url.includes("https://instagram.com/p/")) {
       this.button = false;
       this.errorStatus = 1;
     } else {
       this.button = true;
       this.errorStatus = -1;
     }
-
   }
 
 }

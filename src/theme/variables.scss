@@ -12,7 +12,7 @@
     --ion-color-primary-shade: #3171e0;
     --ion-color-primary-tint: #4c8dff;
     /** secondary **/
-    --ion-color-secondary: #808289;
+    --ion-color-secondary: #3dc2ff;
     --ion-color-secondary-rgb: 61, 194, 255;
     --ion-color-secondary-contrast: #ffffff;
     --ion-color-secondary-contrast-rgb: 255, 255, 255;
@@ -54,6 +54,8 @@
     --ion-color-dark-shade: #1e2023;
     --ion-color-dark-tint: #383a3e;
     /** medium **/
+    --ion-color-medium: #8e8e8e;
+    --ion-color-medium-rgb: 142, 142, 142;
     --ion-color-medium: #92949c;
     --ion-color-medium-rgb: 146, 148, 156;
     --ion-color-medium-contrast: #ffffff;
@@ -67,6 +69,13 @@
     --ion-color-light-contrast-rgb: 0, 0, 0;
     --ion-color-light-shade: #d7d8da;
     --ion-color-light-tint: #f5f6f9;
+    /** instagram **/
+    --ion-color-instagram: linear-gradient(45deg, rgb(209, 176, 97) 0%, rgba(229, 61, 93, 1) 50%, rgba(194, 49, 134, 1) 70%, rgba(156, 56, 187, 1) 100%);
+    --ion-color-instagram-rgb: 0, 0, 0;
+    --ion-color-instagram-contrast: #fff;
+    --ion-color-instagram-contrast-rgb: 0, 0, 0;
+    --ion-color-instagram-shade: #333;
+    --ion-color-instagram-tint: #333;
     /** twitter **/
     --ion-color-twitter: #1DA1F2;
     --ion-color-twitter-rgb: 56, 128, 255;
